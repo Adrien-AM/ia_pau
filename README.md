@@ -3,18 +3,20 @@
 
 Subject : https://live.iapau.fr/docs/sujetsdc/apiconseil.pdf
 
-Doc about XAI : https://arxiv.org/pdf/2111.14260.pdf
-
-
-
 ## To make it work :
+
+We have alreday created two models that you can download here :
+https://we.tl/t-k2JRJx3AzH
+One is for french and one for english.
+
+You can also create yours but data preprocessing and formatting may not work properly.
 
 First you need data in format to make it readable by fastText : \
 ``__label__class1 [__label__class2 ...] Text data``
 
 Script *csv_to_fasttext* can help you generate it.
 (The script has trouble running on all plateforms(maybe because of ram concerns), that's why we have sent you a subset of the data already formated.
-(We also have the entirety of the data formated that way but it won't fit on git, we can send you a we transfer code)
+(We also have the entirety of the data formated that way in data/ dir)
 
 Then you can divide your data in 2 sets for training and testing.
 Script *slice_data* does it for you and randomizes data. \
