@@ -5,12 +5,16 @@ Subject : https://live.iapau.fr/docs/sujetsdc/apiconseil.pdf
 
 Doc about XAI : https://arxiv.org/pdf/2111.14260.pdf
 
+
+
 ## To make it work :
 
-First you need data in format : \
+First you need data in format to make it readable by fastText : \
 ``__label__class1 [__label__class2 ...] Text data``
 
 Script *csv_to_fasttext* can help you generate it.
+(The script has trouble running on all plateforms(maybe because of ram concerns), that's why we have sent you a subset of the data already formated.
+(We also have the entirety of the data formated that way but it won't fit on git, we can send you a we transfer code)
 
 Then you can divide your data in 2 sets for training and testing.
 Script *slice_data* does it for you and randomizes data. \
@@ -21,7 +25,7 @@ Two files will be generated : ``train_set`` and ``test_set`` in ``classifier`` d
 To create the model, use fasttext : 
 https://fasttext.cc/docs/en/supervised-tutorial.html
 
-Here is an example : 
+Here is an example via CLI for conveniance of hyperparametre testing: 
   ```bash
     fasttext supervised -input train_set -out model_name [-epoch number] [-lr learning_rate]
   ```
@@ -29,3 +33,5 @@ Here is an example :
   ```bash
     fasttext test model.bin test_set
   ```
+ 
+The interface has been done with QT in Python.
