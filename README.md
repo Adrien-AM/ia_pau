@@ -16,7 +16,7 @@ First you need data in format to make it readable by fastText : \
 
 Script *csv_to_fasttext* can help you generate it.
 (The script has trouble running on all plateforms(maybe because of ram concerns), that's why we have sent you a subset of the data already formated.
-(We also have the entirety of the data formated that way in data/ dir)
+(We also have the entirety of the data formated that way in final/data/ dir)
 
 Then you can divide your data in 2 sets for training and testing.
 Script *slice_data* does it for you and randomizes data. \
