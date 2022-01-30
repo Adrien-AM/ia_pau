@@ -2,10 +2,10 @@ import pandas as pd
 import xml.etree.ElementTree as ET
 import traceback
 import logging
+import sys
 
-test_file = "../Claims_FRzip/reduced_claims_fr.txt"
-class_file = "../Classifications_A1-EP14-EP35zip/sort_classification.txt"
-
+test_file = sys.argv[1]
+class_file = sys.argv[2]
 
 data_frame_init = pd.read_csv(test_file, sep='\t')
 data_frame_class = pd.read_csv(class_file, sep='\t')
@@ -60,7 +60,7 @@ while row:
                 }
             )
             data_frame = pd.concat([data_frame, tmp_data_frame])
-        if (cpt % 1000 == 0):
+        if (cpt % 10 == 0):
             data_frame.to_csv("test2.csv", sep="\t", mode="a")
             data_frame = pd.DataFrame(
                 {

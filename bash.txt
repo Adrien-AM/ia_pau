@@ -1,6 +1,0 @@
-
-Pour le fichier des classes :
-sort -n Classifications_A1-EP14-EP35.txt | cut -d$'\t' -f2,3,5
-
-Pour le fichier FR :
-cut -d$'\t' -f2,3,7 Claims_FR.txt
